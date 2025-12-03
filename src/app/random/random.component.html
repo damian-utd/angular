@@ -1,0 +1,13 @@
+<div>
+  <p>Max: {{ max }}</p>
+
+  <button (click)="generate()">Generuj liczbę</button>
+
+  <p>Wylosowana wartość: {{ value }}</p>
+
+  <p
+    [style.color]="value <= 0.5 * max ? 'green' : 'red'"
+  >
+    {{ message }}
+  </p>
+</div>

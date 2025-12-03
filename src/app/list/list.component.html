@@ -1,0 +1,13 @@
+<div>
+  <input #txt type="text" placeholder="Wpisz tekst">
+  <button (click)="addItem(txt.value); txt.value=''">Dodaj</button>
+
+  <ul>
+    @for (item of items; track $index) {
+      <li>
+        {{ item }}
+        <a href="#" (click)="removeItem($index); $event.preventDefault()">usuń</a>
+      </li>
+    }
+  </ul>
+</div>
