@@ -1,14 +1,17 @@
-<main>
-  <h1>{{ title }}</h1>
-  <h2>Jestem {{ name }}</h2>
+<header>
+  <h1>Lab 12 – Lista osób</h1>
 
-  <h2>2x Random</h2>
+  <nav>
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Lista osób
+    </a>
+    |
+    <a routerLink="/add" routerLinkActive="active">
+      Dodaj osobę
+    </a>
+  </nav>
 
-  <app-random [max]="20"/>
-  <app-random [max]="100"/>
+  <hr />
+</header>
 
-  <h2>Lista</h2>
-  <app-list></app-list>
-
-
-</main>
+<router-outlet></router-outlet>

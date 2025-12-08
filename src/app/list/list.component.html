@@ -1,13 +1,19 @@
-<div>
-  <input #txt type="text" placeholder="Wpisz tekst">
-  <button (click)="addItem(txt.value); txt.value=''">Dodaj</button>
+<h2>Lista osób</h2>
+
+@if (persons.length === 0) {
+  <p>Brak zapisanych osób.</p>
+} @else {
 
   <ul>
-    @for (item of items; track $index) {
+    @for (person of persons; track i; let i = $index) {
       <li>
-        {{ item }}
-        <a href="#" (click)="removeItem($index); $event.preventDefault()">usuń</a>
+        {{ person.firstName }} {{ person.familyName }}
+        —
+        <a [routerLink]="['/details', i]">szczegóły</a>
+        |
+        <button (click)="delete(i)">usuń</button>
       </li>
     }
   </ul>
-</div>
+
+}

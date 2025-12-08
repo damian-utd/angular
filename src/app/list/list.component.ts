@@ -1,26 +1,33 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { PersonService } from '../person.service';
+import { Person } from '../person';
 
 @Component({
   selector: 'app-list',
-  imports: [CommonModule],
-  templateUrl: './list.component.html',
   standalone: true,
+  imports: [
+    RouterLink
+  ],
+  templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
+export class ListComponent implements OnInit {
 
-export class ListComponent {
+  persons: Person[] = [];
 
-  items: string[] = [];
+  constructor(private personService: PersonService) {}
 
-  addItem(value: string): void {
-    const trimmed = value.trim();
-    if (trimmed.length === 0) return;
-
-    this.items.push(trimmed);
+  ngOnInit(): void {
+    this.loadPersons();
   }
 
-  removeItem(index: number): void {
-    this.items.splice(index, 1);
+  loadPersons(): void {
+    this.persons = this.personService.getAll();
+  }
+
+  delete(index: number): void {
+    this.personService.delete(index);
+    this.loadPersons();
   }
 }

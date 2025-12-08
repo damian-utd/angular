@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lab11": {
+    "lab12": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/lab11",
+            "outputPath": "dist/lab12",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "lab11:build:production"
+              "buildTarget": "lab12:build:production"
             },
             "development": {
-              "buildTarget": "lab11:build:development"
+              "buildTarget": "lab12:build:development"
             }
           },
           "defaultConfiguration": "development"

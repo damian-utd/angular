@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RandomService } from './random.service';
+import { PersonService } from './person.service';
 
-describe('RandomService', () => {
-  let service: RandomService;
+describe('PersonService', () => {
+  let service: PersonService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(RandomService);
+    service = TestBed.inject(PersonService);
   });
 
   it('should be created', () => {

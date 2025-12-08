@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RandomComponent } from './random.component';
+import { AddPersonComponent } from './add-person.component';
 
-describe('RandomComponent', () => {
-  let component: RandomComponent;
-  let fixture: ComponentFixture<RandomComponent>;
+describe('AddPersonComponent', () => {
+  let component: AddPersonComponent;
+  let fixture: ComponentFixture<AddPersonComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RandomComponent]
+      imports: [AddPersonComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RandomComponent);
+    fixture = TestBed.createComponent(AddPersonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
