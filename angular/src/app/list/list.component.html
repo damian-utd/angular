@@ -1,0 +1,19 @@
+<h2>Lista osób</h2>
+
+@if (persons.length === 0) {
+  <p>Brak zapisanych osób.</p>
+} @else {
+
+  <ul>
+    @for (person of persons; track person.id) {
+      <li>
+        {{ person.firstName }} {{ person.familyName }}
+        —
+        <a [routerLink]="['/details', person.id]">szczegóły</a>
+        |
+        <button (click)="delete(person.id)">usuń</button>
+      </li>
+    }
+  </ul>
+
+}
