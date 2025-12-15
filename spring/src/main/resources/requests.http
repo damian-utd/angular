@@ -1,0 +1,13 @@
+POST http://localhost:8080/api/persons
+Content-Type: application/json
+
+{
+  "firstName": "Jan",
+  "familyName": "Kowalski",
+  "age": 25,
+  "address": {
+    "city": "Warszawa",
+    "street": "Sezamkowa 1",
+    "postCode": "00-001"
+  }
+}
